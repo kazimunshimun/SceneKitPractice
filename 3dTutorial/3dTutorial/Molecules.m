@@ -35,9 +35,14 @@
     [self nodeWithAtom:[Atoms carbonAtoms] molecule:ethanolMolecule andPosition:SCNVector3Make(-4, 0, 0)];
     
     //connect 2 carbon atoms with scncylinder
-    //SCNCylinder *carbonCarbonBond = [SCNCylinder cylinderWithRadius:.5 height:2];
+    SCNCylinder *bondCylinder = [SCNCylinder cylinderWithRadius:0.3 height:4];
+    bondCylinder.firstMaterial.diffuse.contents = [UIColor darkGrayColor];
+    bondCylinder.firstMaterial.specular.contents = [UIColor whiteColor];
+    SCNNode *carbonCarbonBondNode = [SCNNode nodeWithGeometry:bondCylinder];
+    carbonCarbonBondNode.position = SCNVector3Make(-2, 0, 0);
+    carbonCarbonBondNode.rotation = SCNVector4Make(0, 0, 1, M_PI/2);
     
-    //[ethanolMolecule addChildNode:carbonCarbonBond];
+    [ethanolMolecule addChildNode:carbonCarbonBondNode];
     
     //1 oxygen connected with first carbon
     [self nodeWithAtom:[Atoms oxygenAtoms] molecule:ethanolMolecule andPosition:SCNVector3Make(+4, 0, 0)];
