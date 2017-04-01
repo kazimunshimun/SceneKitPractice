@@ -50,6 +50,8 @@
     self.worldView.scene = scene;
     // allows the user to manipulate the camera
     self.worldView.allowsCameraControl = YES;
+    
+    self.worldView.showsStatistics = YES;
 }
 
 - (void)didReceiveMemoryWarning {

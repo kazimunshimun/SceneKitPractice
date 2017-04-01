@@ -14,7 +14,7 @@
 +(SCNGeometry *) block{
     
     SCNBox *boxGeometry = [SCNBox boxWithWidth:3.0f height:0.2f length:3.0f chamferRadius:0.01f];
-    boxGeometry.firstMaterial.diffuse.contents = [UIImage imageNamed:@"tiles1"];
+    boxGeometry.firstMaterial.diffuse.contents = [UIImage imageNamed:@"tile7"];
     boxGeometry.firstMaterial.specular.contents = [UIColor whiteColor];
     
     return boxGeometry;
