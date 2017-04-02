@@ -26,6 +26,11 @@
     [self initializeWorld];
 }
 
+- (IBAction)editButtonTouched:(id)sender {
+
+    NSLog(@"edit button touched inside");
+}
+
 -(void) initializeWorld{
     SCNScene *scene = [[SCNScene alloc] init];
     
@@ -38,13 +43,13 @@
     [scene.rootNode addChildNode:cameraNode];
     
     // place the camera
-    cameraNode.position = SCNVector3Make(10, 10, 35);
+    cameraNode.position = SCNVector3Make(20, 25, 100);
     
     SCNNode *ambientLightNode = [[SCNNode alloc] init];
     ambientLightNode.light = [[SCNLight alloc] init];
     ambientLightNode.light.type = SCNLightTypeOmni;
     ambientLightNode.light.color = [UIColor colorWithWhite:0.75f alpha:1.0f];
-    ambientLightNode.position = SCNVector3Make(0, 50, 50);
+    ambientLightNode.position = SCNVector3Make(0, 70, 20);
     [scene.rootNode addChildNode:ambientLightNode];
     
     self.worldView.scene = scene;
