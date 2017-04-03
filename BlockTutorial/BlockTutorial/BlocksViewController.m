@@ -27,6 +27,9 @@
     blocks = [[Blocks alloc] init];
     
     [self initializeWorld];
+    
+    // horizontal picker view link
+    //https://github.com/stackthread/STHorizontalPicker
 }
 
 - (IBAction)editButtonTouched:(id)sender {
