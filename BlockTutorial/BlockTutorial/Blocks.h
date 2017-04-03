@@ -11,5 +11,6 @@
 
 @interface Blocks : NSObject
 
-+(SCNNode *) allBlocks;
+-(SCNNode *) allBlocks;
+-(void) setTileImage;
 @end

@@ -12,6 +12,7 @@
 
 @interface BlocksViewController (){
     SCNNode *worldNode;
+    Blocks *blocks;
 }
 @property (weak, nonatomic) IBOutlet SCNView *worldView;
 
@@ -23,18 +24,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     worldNode = [[SCNNode alloc] init];
+    blocks = [[Blocks alloc] init];
+    
     [self initializeWorld];
 }
 
 - (IBAction)editButtonTouched:(id)sender {
 
     NSLog(@"edit button touched inside");
+    [blocks setTileImage];
 }
 
 -(void) initializeWorld{
     SCNScene *scene = [[SCNScene alloc] init];
     
-    worldNode = [Blocks allBlocks];
+    worldNode = [blocks allBlocks];
     [scene.rootNode addChildNode:worldNode];
     
     // create and add a camera to the scene
@@ -43,13 +47,13 @@
     [scene.rootNode addChildNode:cameraNode];
     
     // place the camera
-    cameraNode.position = SCNVector3Make(20, 25, 100);
+    cameraNode.position = SCNVector3Make(20, 25, 80);
     
     SCNNode *ambientLightNode = [[SCNNode alloc] init];
     ambientLightNode.light = [[SCNLight alloc] init];
     ambientLightNode.light.type = SCNLightTypeOmni;
     ambientLightNode.light.color = [UIColor colorWithWhite:0.75f alpha:1.0f];
-    ambientLightNode.position = SCNVector3Make(0, 70, 20);
+    ambientLightNode.position = SCNVector3Make(0, 50, 20);
     [scene.rootNode addChildNode:ambientLightNode];
     
     self.worldView.scene = scene;

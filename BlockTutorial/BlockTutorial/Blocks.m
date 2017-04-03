@@ -15,68 +15,106 @@
 #define WALL_HEIGHT 20.2
 #define WALL_LENGTH 0.2
 
-#define NUM_OF_TILE_VERTICAL    20
-#define NUM_OF_TILE_HORIZONTAL  20
+#define NUM_OF_TILE_VERTICAL    15
+#define NUM_OF_TILE_HORIZONTAL  10
+
+@interface Blocks(){
+    SCNBox *boxGeometry;
+    SCNNode *blocksNode;
+}
+
+@end
 
 @implementation Blocks
 
-+(SCNGeometry *) block{
+-(SCNGeometry *) block{
     
-    SCNBox *boxGeometry = [SCNBox boxWithWidth:TILE_WIDTH height:TILE_HEIGHT length:TILE_LENGTH chamferRadius:0.01f];
+    boxGeometry = [SCNBox boxWithWidth:TILE_WIDTH height:TILE_HEIGHT length:TILE_LENGTH chamferRadius:0.01f];
     boxGeometry.firstMaterial.diffuse.contents = [UIImage imageNamed:@"tiles1"];
     boxGeometry.firstMaterial.specular.contents = [UIColor whiteColor];
     
     return boxGeometry;
 }
 
-+(SCNGeometry *) drawWall{
+-(void) setTileImage{
     
-    SCNBox *boxGeometry = [SCNBox boxWithWidth:NUM_OF_TILE_VERTICAL*TILE_WIDTH height:WALL_HEIGHT length:WALL_LENGTH chamferRadius:0.0f];
-    boxGeometry.firstMaterial.diffuse.contents = [UIColor lightGrayColor];
-    boxGeometry.firstMaterial.specular.contents = [UIColor whiteColor];
-    
-    return boxGeometry;
+    for (int i = 0; i < NUM_OF_TILE_VERTICAL; i++) {
+        for (int j = 0; j < NUM_OF_TILE_HORIZONTAL; j++) {
+            NSString* nodeName = [NSString stringWithFormat:@"%dn%d",i,j];
+            SCNNode* blockNode = [blocksNode childNodeWithName:nodeName recursively:NO];
+            SCNGeometry* blockGeometry = blockNode.geometry;
+            blockGeometry.firstMaterial.diffuse.contents = [UIImage imageNamed:@"tile4"];
+        }
+    }
+ //   boxGeometry.firstMaterial.diffuse.contents = [UIImage imageNamed:@"tile4"];
 }
 
-+(SCNGeometry *) drawWallSide{
+-(SCNGeometry *) drawWall{
     
-    SCNBox *boxGeometry = [SCNBox boxWithWidth:WALL_LENGTH height:WALL_HEIGHT length:NUM_OF_TILE_VERTICAL*TILE_WIDTH chamferRadius:0.0f];
-    boxGeometry.firstMaterial.diffuse.contents = [UIColor lightGrayColor];
-    boxGeometry.firstMaterial.specular.contents = [UIColor whiteColor];
+    SCNBox *wallGeometry = [SCNBox boxWithWidth:NUM_OF_TILE_HORIZONTAL*TILE_WIDTH height:WALL_HEIGHT length:WALL_LENGTH chamferRadius:0.0f];
+    wallGeometry.firstMaterial.diffuse.contents = [UIColor lightGrayColor];
+    wallGeometry.firstMaterial.specular.contents = [UIColor whiteColor];
     
-    return boxGeometry;
+    return wallGeometry;
 }
 
-+(SCNNode *) backWall{
+-(SCNGeometry *) drawWallSide{
+    
+    SCNBox *wallGeometry = [SCNBox boxWithWidth:WALL_LENGTH height:WALL_HEIGHT length:NUM_OF_TILE_VERTICAL*TILE_WIDTH chamferRadius:0.0f];
+    wallGeometry.firstMaterial.diffuse.contents = [UIColor lightGrayColor];
+    wallGeometry.firstMaterial.specular.contents = [UIColor whiteColor];
+    
+    return wallGeometry;
+}
+
+-(void) backWall{
     SCNNode *wallBackNode = [SCNNode nodeWithGeometry:[self drawWall]];
-    CGFloat wallPositionX = (NUM_OF_TILE_VERTICAL*TILE_WIDTH)/2.0 - TILE_WIDTH/2.0;
+    CGFloat wallPositionX = (NUM_OF_TILE_HORIZONTAL*TILE_WIDTH)/2.0 - TILE_WIDTH/2.0;
     CGFloat wallPositionY = WALL_HEIGHT/2.0;
     CGFloat wallPositionZ = TILE_LENGTH/2.0;
     wallBackNode.position = SCNVector3Make(wallPositionX,wallPositionY,-wallPositionZ);
-    return wallBackNode;
+    [blocksNode addChildNode:wallBackNode];
 }
 
-+(SCNNode *) allBlocks{
-    SCNNode *blocksNode = [[SCNNode alloc] init];
-    
-    [blocksNode addChildNode:[self backWall]];
+-(void) leftWall{
+    CGFloat wallLeftPositionX = TILE_WIDTH/2.0;
+    CGFloat wallLeftPositionY = WALL_HEIGHT/2.0;
+    CGFloat wallLeftPositionZ = (NUM_OF_TILE_VERTICAL*TILE_LENGTH)/2.0 - TILE_LENGTH/2.0;
     
     SCNNode *wallLeftNode = [SCNNode nodeWithGeometry:[self drawWallSide]];
-    wallLeftNode.position = SCNVector3Make(-1.5f,10.0,28.5f);
+    wallLeftNode.position = SCNVector3Make(-wallLeftPositionX,wallLeftPositionY,wallLeftPositionZ);
     [blocksNode addChildNode:wallLeftNode];
+}
+
+-(void) rightWall{
     
+    CGFloat wallRightPositionX = (NUM_OF_TILE_HORIZONTAL*TILE_WIDTH) - TILE_WIDTH/2.0;
+    CGFloat wallRightPositionY = WALL_HEIGHT/2.0;
+    CGFloat wallRightPositionZ = (NUM_OF_TILE_VERTICAL*TILE_LENGTH)/2.0 - TILE_LENGTH/2.0;
+    
+    SCNNode *wallRightNode = [SCNNode nodeWithGeometry:[self drawWallSide]];
+    wallRightNode.position = SCNVector3Make(wallRightPositionX, wallRightPositionY, wallRightPositionZ);
+    [blocksNode addChildNode:wallRightNode];
+}
+
+-(SCNNode *) allBlocks{
+    blocksNode = [[SCNNode alloc] init];
+    
+    [self backWall];
+    [self leftWall];
+    [self rightWall];
     
     for (int i =0; i<NUM_OF_TILE_VERTICAL; i++) {
         for (int j = 0; j<NUM_OF_TILE_HORIZONTAL; j++) {
             SCNNode *blockNode = [SCNNode nodeWithGeometry:[self block]];
             blockNode.position = SCNVector3Make(j*TILE_WIDTH, 0, i*TILE_LENGTH);
+            blockNode.name = [NSString stringWithFormat:@"%dn%d",i,j];
+         //   NSLog(@"%@",blockNode.name);
             [blocksNode addChildNode:blockNode];
         }
     }
     
-    SCNNode *wallRightNode = [SCNNode nodeWithGeometry:[self drawWallSide]];
-    wallRightNode.position = SCNVector3Make(60-1.5,10.0,28.5f);
-    [blocksNode addChildNode:wallRightNode];
+    
     return blocksNode;
 }
 
