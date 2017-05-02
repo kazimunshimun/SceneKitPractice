@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDCA39DF1EAF151500B91721 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCA39DE1EAF151500B91721 /* main.m */; };
+		CDCA39E41EAF151500B91721 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCA39E31EAF151500B91721 /* art.scnassets */; };
+		CDCA39EA1EAF151500B91721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCA39E81EAF151500B91721 /* Main.storyboard */; };
+		CDCA39EC1EAF151500B91721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCA39EB1EAF151500B91721 /* Assets.xcassets */; };
+		CDCA39EF1EAF151500B91721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCA39ED1EAF151500B91721 /* LaunchScreen.storyboard */; };
+		CDCA3A071EAF1B4000B91721 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCA3A061EAF1B4000B91721 /* AppDelegate.m */; };
+		CDCA3A0A1EAF1B5A00B91721 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCA3A091EAF1B5A00B91721 /* GameViewController.m */; };
+		CDCA3A0E1EAF39D700B91721 /* GameWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCA3A0D1EAF39D700B91721 /* GameWorldScene.m */; };
+		CDCA3A111EAF3A4800B91721 /* WorldNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCA3A101EAF3A4800B91721 /* WorldNode.m */; };
+		CDCA3A141EAF564200B91721 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCA3A131EAF564200B91721 /* Constants.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CDCA39DA1EAF151500B91721 /* TreasureWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDCA39DE1EAF151500B91721 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CDCA39E31EAF151500B91721 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		CDCA39E91EAF151500B91721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDCA39EB1EAF151500B91721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CDCA39EE1EAF151500B91721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CDCA39F01EAF151500B91721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCA3A051EAF1B4000B91721 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CDCA3A061EAF1B4000B91721 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CDCA3A081EAF1B5A00B91721 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		CDCA3A091EAF1B5A00B91721 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		CDCA3A0C1EAF39D700B91721 /* GameWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorldScene.h; sourceTree = "<group>"; };
+		CDCA3A0D1EAF39D700B91721 /* GameWorldScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameWorldScene.m; sourceTree = "<group>"; };
+		CDCA3A0F1EAF3A4800B91721 /* WorldNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldNode.h; sourceTree = "<group>"; };
+		CDCA3A101EAF3A4800B91721 /* WorldNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldNode.m; sourceTree = "<group>"; };
+		CDCA3A121EAF564200B91721 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CDCA3A131EAF564200B91721 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDCA39D71EAF151500B91721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDCA39D11EAF151500B91721 = {
+			isa = PBXGroup;
+			children = (
+				CDCA39DC1EAF151500B91721 /* TreasureWorld */,
+				CDCA39DB1EAF151500B91721 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDCA39DB1EAF151500B91721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA39DA1EAF151500B91721 /* TreasureWorld.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDCA39DC1EAF151500B91721 /* TreasureWorld */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA39F61EAF1B2700B91721 /* Actions */,
+				CDCA39F71EAF1B2700B91721 /* Controllers */,
+				CDCA39F81EAF1B2700B91721 /* Data */,
+				CDCA39F91EAF1B2700B91721 /* Delegate */,
+				CDCA39FA1EAF1B2700B91721 /* IAP */,
+				CDCA39FB1EAF1B2700B91721 /* Models */,
+				CDCA39FC1EAF1B2700B91721 /* Networks */,
+				CDCA39FD1EAF1B2700B91721 /* Nodes */,
+				CDCA39FE1EAF1B2700B91721 /* Physics */,
+				CDCA39FF1EAF1B2700B91721 /* Resources */,
+				CDCA3A001EAF1B2700B91721 /* Scenes */,
+				CDCA3A011EAF1B2700B91721 /* SKS */,
+				CDCA3A0B1EAF1B7000B91721 /* Storyboard */,
+				CDCA3A021EAF1B2700B91721 /* Texture */,
+				CDCA3A031EAF1B2700B91721 /* Utils */,
+				CDCA3A041EAF1B2700B91721 /* Views */,
+				CDCA39E31EAF151500B91721 /* art.scnassets */,
+				CDCA39EB1EAF151500B91721 /* Assets.xcassets */,
+				CDCA39F01EAF151500B91721 /* Info.plist */,
+				CDCA39DD1EAF151500B91721 /* Supporting Files */,
+			);
+			path = TreasureWorld;
+			sourceTree = "<group>";
+		};
+		CDCA39DD1EAF151500B91721 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA39DE1EAF151500B91721 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDCA39F61EAF1B2700B91721 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		CDCA39F71EAF1B2700B91721 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA3A081EAF1B5A00B91721 /* GameViewController.h */,
+				CDCA3A091EAF1B5A00B91721 /* GameViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CDCA39F81EAF1B2700B91721 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CDCA39F91EAF1B2700B91721 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA3A051EAF1B4000B91721 /* AppDelegate.h */,
+				CDCA3A061EAF1B4000B91721 /* AppDelegate.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		CDCA39FA1EAF1B2700B91721 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
+		CDCA39FB1EAF1B2700B91721 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CDCA39FC1EAF1B2700B91721 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		CDCA39FD1EAF1B2700B91721 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA3A0F1EAF3A4800B91721 /* WorldNode.h */,
+				CDCA3A101EAF3A4800B91721 /* WorldNode.m */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		CDCA39FE1EAF1B2700B91721 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		CDCA39FF1EAF1B2700B91721 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CDCA3A001EAF1B2700B91721 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA3A0C1EAF39D700B91721 /* GameWorldScene.h */,
+				CDCA3A0D1EAF39D700B91721 /* GameWorldScene.m */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CDCA3A011EAF1B2700B91721 /* SKS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SKS;
+			sourceTree = "<group>";
+		};
+		CDCA3A021EAF1B2700B91721 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Texture;
+			sourceTree = "<group>";
+		};
+		CDCA3A031EAF1B2700B91721 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA3A121EAF564200B91721 /* Constants.h */,
+				CDCA3A131EAF564200B91721 /* Constants.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CDCA3A041EAF1B2700B91721 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CDCA3A0B1EAF1B7000B91721 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CDCA39E81EAF151500B91721 /* Main.storyboard */,
+				CDCA39ED1EAF151500B91721 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDCA39D91EAF151500B91721 /* TreasureWorld */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDCA39F31EAF151500B91721 /* Build configuration list for PBXNativeTarget "TreasureWorld" */;
+			buildPhases = (
+				CDCA39D61EAF151500B91721 /* Sources */,
+				CDCA39D71EAF151500B91721 /* Frameworks */,
+				CDCA39D81EAF151500B91721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TreasureWorld;
+			productName = TreasureWorld;
+			productReference = CDCA39DA1EAF151500B91721 /* TreasureWorld.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDCA39D21EAF151500B91721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = mTeam;
+				TargetAttributes = {
+					CDCA39D91EAF151500B91721 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CDCA39D51EAF151500B91721 /* Build configuration list for PBXProject "TreasureWorld" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDCA39D11EAF151500B91721;
+			productRefGroup = CDCA39DB1EAF151500B91721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDCA39D91EAF151500B91721 /* TreasureWorld */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDCA39D81EAF151500B91721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDCA39E41EAF151500B91721 /* art.scnassets in Resources */,
+				CDCA39EF1EAF151500B91721 /* LaunchScreen.storyboard in Resources */,
+				CDCA39EC1EAF151500B91721 /* Assets.xcassets in Resources */,
+				CDCA39EA1EAF151500B91721 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDCA39D61EAF151500B91721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDCA39DF1EAF151500B91721 /* main.m in Sources */,
+				CDCA3A111EAF3A4800B91721 /* WorldNode.m in Sources */,
+				CDCA3A0A1EAF1B5A00B91721 /* GameViewController.m in Sources */,
+				CDCA3A071EAF1B4000B91721 /* AppDelegate.m in Sources */,
+				CDCA3A0E1EAF39D700B91721 /* GameWorldScene.m in Sources */,
+				CDCA3A141EAF564200B91721 /* Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CDCA39E81EAF151500B91721 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDCA39E91EAF151500B91721 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		CDCA39ED1EAF151500B91721 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDCA39EE1EAF151500B91721 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CDCA39F11EAF151500B91721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CDCA39F21EAF151500B91721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDCA39F41EAF151500B91721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TreasureWorld/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.treasure.ios.TreasureWorld;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDCA39F51EAF151500B91721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TreasureWorld/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.treasure.ios.TreasureWorld;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDCA39D51EAF151500B91721 /* Build configuration list for PBXProject "TreasureWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDCA39F11EAF151500B91721 /* Debug */,
+				CDCA39F21EAF151500B91721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDCA39F31EAF151500B91721 /* Build configuration list for PBXNativeTarget "TreasureWorld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDCA39F41EAF151500B91721 /* Debug */,
+				CDCA39F51EAF151500B91721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDCA39D21EAF151500B91721 /* Project object */;
+}
