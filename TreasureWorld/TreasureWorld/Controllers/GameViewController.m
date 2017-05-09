@@ -14,6 +14,8 @@
     SCNNode *cameraOrbit;
     SCNNode *cameraNode;
     SCNCamera *camera;
+    
+    float currentAngle;
 }
 @property (strong, nonatomic) IBOutlet SCNView *worldView;
 
@@ -40,6 +42,8 @@ int lastFingersNumber = 0;
 
    // self.worldView.scene = [[GameWorldScene alloc] init];
     
+    currentAngle = 0.0f;
+    
     SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/simple_island_5.scn"];
     self.worldView.scene = scene;
     
@@ -52,7 +56,7 @@ int lastFingersNumber = 0;
     [self createCameraNode];
     
     // add a tap gesture recognizer
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognizer:)];
     [self.worldView addGestureRecognizer:panGesture];
     
     //allows the user to manipulate the camera
@@ -132,6 +136,19 @@ int lastFingersNumber = 0;
     
     //initial camera setup
     [cameraOrbit setEulerAngles:SCNVector3Make((CGFloat)(-M_PI) * lastHeightRatio, (-2 * M_PI) * lastWidthRatio, 1)];
+}
+
+-(void) panGestureRecognizer :(UIPanGestureRecognizer*) gesture{
+    CGPoint translation = [gesture translationInView:gesture.view];
+    float newAngle = translation.x * (float)(M_PI)/180;
+    newAngle += currentAngle;
+    cameraNode.transform = SCNMatrix4MakeRotation(newAngle, 0, 1, 0);
+    
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        currentAngle = newAngle;
+    }
+    
+    
 }
 
 - (void) handlePan:(UIPanGestureRecognizer*)gestureRecognize{
