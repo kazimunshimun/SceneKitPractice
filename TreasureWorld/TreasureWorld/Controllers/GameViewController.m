@@ -45,6 +45,9 @@ int lastFingersNumber = 0;
     currentAngle = 0.0f;
     
     SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/simple_island_5.scn"];
+    
+    //camera = [scene.rootNode childNodeWithName:@"Camera" recursively:YES];
+    
     self.worldView.scene = scene;
     
     //[self drawPiramid];
@@ -252,6 +255,16 @@ int lastFingersNumber = 0;
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+- (IBAction)leftButtonPressed:(id)sender {
+    NSLog(@"left button pressed");
+    currentAngle += 5;
+    cameraOrbit.transform = SCNMatrix4MakeRotation(currentAngle, 0, 1, 0);
+}
+- (IBAction)rightButtonPressed:(id)sender {
+    NSLog(@"right button pressed");
+    currentAngle -= 5;
+    cameraNode.transform = SCNMatrix4MakeRotation(currentAngle, 0, 1, 0);
 }
 
 @end
